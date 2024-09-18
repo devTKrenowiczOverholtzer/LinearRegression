@@ -19,3 +19,6 @@ plt.scatter(wine_df['alcohol'], wine_df['quality'])
 plt.xlabel('Alcohol')
 plt.ylabel('WineQuality')
 plt.title('Alcohol VS Quality')
+
+# show plot 
+plt.show()
