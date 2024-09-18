@@ -14,3 +14,8 @@ wine_df = pd.read_csv('winequality-white.csv', sep =';')
 # Make linear regression for Alcohol and WineQuality
 # create scatterplot using our dataframe as x variable , wine quality as our y variable 
 plt.scatter(wine_df['alcohol'], wine_df['quality']) 
+
+# make pretty with axis labels 
+plt.xlabel('Alcohol')
+plt.ylabel('WineQuality')
+plt.title('Alcohol VS Quality')
