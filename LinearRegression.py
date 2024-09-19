@@ -65,5 +65,12 @@ sum_x_times_y = (wine_df['alcohol']*wine_df['quality']).sum()
 # pandas libraries you can chain .pow(2).sum() 
 sum_x_squared = wine_df['alcohol'].pow(2).sum()
 
-print(f'{sum_x_times_y}\n{sum_x_squared}')
+#print(f'{sum_x_times_y}\n{sum_x_squared}')
 
+# Calculate Numerator and Denominator for m
+# Variable Sxy going to be sum_x_times_y minus sumx times sum y divided by n
+Sxy = sum_x_times_y - (sum_x*sum_y)/n 
+# Variable Sxx is going to be  sum x squared minus sumx times sum x divided by n
+Sxx = sum_x_squared - (sum_x*sum_x)/n
+
+print(f'Sxy:{Sxy}\nSxx:{Sxx}') 
