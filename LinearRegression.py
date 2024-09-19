@@ -117,3 +117,8 @@ total_squares = (wine_df["quality"]- y_mean).pow(2).sum()
 #take residual squares as a percentage er as a proportion subtract it from one and thats going to give us r^2 
 r_squared = 1 - (residual_squares/total_squares)
 print(f"Coefficient of Determination: {r_squared}")  
+# .189 pretty terrible basically 20% of variation in the actual y variables in comparision to our regression line is explained by our model 
+# pretty low percentage so our model isnt that useful, not that good  
+# even though for specific example above it looked alright 
+# important to check r_squared. went really well on one data point of checking but overall this model doesn't predict most ys very well 
+
