@@ -72,5 +72,9 @@ sum_x_squared = wine_df['alcohol'].pow(2).sum()
 Sxy = sum_x_times_y - (sum_x*sum_y)/n 
 # Variable Sxx is going to be  sum x squared minus sumx times sum x divided by n
 Sxx = sum_x_squared - (sum_x*sum_x)/n
+#print(f'Sxy:{Sxy}\nSxx:{Sxx}') 
 
-print(f'Sxy:{Sxy}\nSxx:{Sxx}') 
+# Get Line Variables 
+m = Sxy/Sxx
+b = y_mean - m*x_mean
+print(f'Regression Equation: y={m}x+{b}')
