@@ -77,4 +77,22 @@ Sxx = sum_x_squared - (sum_x*sum_x)/n
 # Get Line Variables 
 m = Sxy/Sxx
 b = y_mean - m*x_mean
-print(f'Regression Equation: y={m}x+{b}')
+#print(f'Regression Equation: y={m}x+{b}')
+
+# anytime get a new alcohol quanity we are going to multiply it by .313 and add 2.58 to arrive at the wine quality score
+# predict a variable 
+row = 5
+# try to predict wine quality from alcohol value 
+# alcohol value for this row is wine dataframe locate row 5, here is the alcohol score
+alcohol_val = wine_df.loc[5, 'alcohol']
+# actual quality value is going to be row 5s quality value (zero index so techniqually its actually row 6)
+quality_val = wine_df.loc[5, 'quality']
+# predictive quality using model , is our alcohol value times m plus b (plugging directly into regression equation 
+predicted_quality = alcohol_val*m+b
+
+#print(f'for alcohol value {alcohol_val} the predictive quality was {predicted_quality} and the actual value was {quality_val}')
+# not bad , wide range of values that can go from 0-10 not way off 
+# first glance this model looks pretty decent 
+# want to check coefficent of determination 
+
+
