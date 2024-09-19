@@ -196,3 +196,16 @@ print("Training Model")
 print(f"Regression Equation: y={model_m}x+{model_b}")
 # notice that you will probably have a different set of values than example
 # Why? It splits it randomly, chances of running this and getting same values low
+
+# Get Coefficient of Determination
+# What set going to use to score it now: test set
+# Really want to know how our model performs on data we havn't seen before
+# Data is not used in training,used it in testing see how it does 
+score = lr_model_2.score(testing_set[["alcohol"]], testing_set[["quality"]])
+print(f"Coefficient of determination: {score}")
+
+# Notice we actually did worse
+# Generally having a training and testing set reduces your models ability to overfit
+# Generally makes a slightly better model 
+# In this case have very little data or it was just split badly and in fact we have a worse model than before
+
