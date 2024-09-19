@@ -44,4 +44,11 @@ sum_y = wine_df['quality'].sum()
 # fstrings another way to make strings, if you do f and a " then you can put variables in brackets inside this string , can be handy to not use multiple print statements
 # print(f"{sum_x}{sum_y}")
 
+# Mean of X variables
+# taking a straight forward mean: sum of x divided by number of rows
+# also a pandas way to do that to
+x_mean = sum_x/n
+# Mean of Y variables
+y_mean = sum_y/n
 
+#print(f"{x_mean}{y_mean}")
