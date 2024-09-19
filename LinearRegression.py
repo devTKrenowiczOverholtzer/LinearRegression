@@ -91,8 +91,29 @@ quality_val = wine_df.loc[5, 'quality']
 predicted_quality = alcohol_val*m+b
 
 #print(f'for alcohol value {alcohol_val} the predictive quality was {predicted_quality} and the actual value was {quality_val}')
-# not bad , wide range of values that can go from 0-10 not way off 
+# not bad , wide range of values that can go from 0-10 not way off only ~.3 off 
 # first glance this model looks pretty decent 
-# want to check coefficent of determination 
 
+# want to check coefficent of determination next 
+# create predictions for all our variables now 
+# take dataframe add in these brackets this new column that we are calling predictions 
+# to create this new column take the entire alcohol column multiply it by our m value and add our b value 
+# taking alcohol column and plugging it into our regression equation to create this new prediction column
+wine_df["predicitions"] = wine_df['alcohol']*m+b
 
+# create residual squares 
+# take quality column which is our ground truth?
+# subtract predictions column to power of two 
+# ground truth minus what we actually predicted
+# square that so they are all positive , take the sum of those 
+# residual squares % of variation thats explainable by our model 
+# looking at variation becuase we are taking the actual values minus our model predictions ,squaring those and summing them
+residual_squares = (wine_df["quality"]-wine_df["predicitions"]).pow(2).sum()
+
+# looking at total variation 
+# taking actual scores minus the mean of all the scores (how much everything deviated from the mean) and its squaring that and summing it  
+total_squares = (wine_df["quality"]- y_mean).pow(2).sum()
+
+#take residual squares as a percentage er as a proportion subtract it from one and thats going to give us r^2 
+r_squared = 1 - (residual_squares/total_squares)
+print(f"Coefficient of Determination: {r_squared}")  
