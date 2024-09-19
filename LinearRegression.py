@@ -34,4 +34,14 @@ n =  len(wine_df.index)
 # Summary statistics needed are sum of all x variables
 # X variable is alcohol  
 # what we are going to plug in to get wine quality prediction
-sum_x = wine_df['alcohol']
+# grab that column of the dataframe and just use the sum function/property on that
+sum_x = wine_df['alcohol'].sum()
+
+# same process as x 
+sum_y = wine_df['quality'].sum()
+
+# print those 
+# fstrings another way to make strings, if you do f and a " then you can put variables in brackets inside this string , can be handy to not use multiple print statements
+# print(f"{sum_x}{sum_y}")
+
+
