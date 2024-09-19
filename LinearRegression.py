@@ -148,3 +148,8 @@ model_b = linear_regression_model.intercept_[0]
 print ("Scikit Learn Regression Model")
 print(f"Regression Equation: y = {model_m}x + {model_b}")
 
+# Predict same value as before 
+# predict alcohol value 
+predicted_model_quality = linear_regression_model.predict([[alcohol_val]])
+# have to reindex it 
+print(f'for alcohol value {alcohol_val} the predictive quality was {predicted_model_quality} and the actual value was {quality_val}')
