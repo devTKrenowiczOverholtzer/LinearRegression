@@ -160,3 +160,16 @@ print(f'for alcohol value {alcohol_val} the predictive quality was {predicted_mo
 # pass in our quality as our values
 score = linear_regression_model.score(wine_df[["alcohol"]], wine_df[["quality"]])
 print(f"Coefficient of Determination: {score}")
+
+# plotting the best fit line
+# see it overlayed on the data
+# plot alcohol and quality variable on x,y
+plt.scatter(wine_df["alcohol"],wine_df["quality"])
+# plot the alcohol variable against  the predictions so thats basically our prediction 
+plt.plot(wine_df["alcohol"],wine_df["predicitions"], linestyle="solid")
+plt.xlabel("alcohol")
+plt.ylabel("quality")
+plt.title("alcohol vs quality")
+plt.show()
+
+
