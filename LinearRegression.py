@@ -29,5 +29,9 @@ wine_df = pd.read_csv('winequality-white.csv', sep =';')
 # n variable is how many rows in our dataframe (need to use in a lot of sumations)
 # get length of winedataframe index 
 n =  len(wine_df.index)
-print(n)
+#print(n)
 
+# Summary statistics needed are sum of all x variables
+# X variable is alcohol  
+# what we are going to plug in to get wine quality prediction
+sum_x = wine_df['alcohol']
