@@ -59,3 +59,11 @@ y_mean = sum_y/n
 # sum of that 
 # create a new series in pandas so we can take the sum over that series (handy)
 sum_x_times_y = (wine_df['alcohol']*wine_df['quality']).sum() 
+
+# get alcohol variable of wine dataframe take it to the power of two pow(2)
+# take sum of that 
+# pandas libraries you can chain .pow(2).sum() 
+sum_x_squared = wine_df['alcohol'].pow(2).sum()
+
+print(f'{sum_x_times_y}\n{sum_x_squared}')
+
