@@ -165,11 +165,34 @@ print(f"Coefficient of Determination: {score}")
 # see it overlayed on the data
 # plot alcohol and quality variable on x,y
 plt.scatter(wine_df["alcohol"],wine_df["quality"])
-# plot the alcohol variable against  the predictions so thats basically our prediction 
-plt.plot(wine_df["alcohol"],wine_df["predicitions"], linestyle="solid")
-plt.xlabel("alcohol")
-plt.ylabel("quality")
-plt.title("alcohol vs quality")
-plt.show()
+# plot the alcohol variable against  the predictions so thats basically our regression
+# linestyle other options change color 
+#plt.plot(wine_df["alcohol"],wine_df["predicitions"], linestyle="solid")
+#plt.xlabel("alcohol")
+#plt.ylabel("quality")
+#plt.title("alcohol vs quality")
+#plt.show()
 
+# regressiion line and our data does kinda follow the scatterplot upward trend but the varaition  in these values is huge, make sense our coefficient of variation is so low, explaining only about 20% of variation becuase these points are all across the board for any given value of x 
 
+# Break into Testing Set and Training Set
+# Even though on this data set its a small amount of data 
+# Probably not overfitting because we are not even fitting it very well
+# Applicable to other models 
+
+# making test size equal to 10% of the data
+# import scikit learn function
+training_set, testing_set = train_test_split(wine_df, test_size=0.1)
+
+# Repeat linear regression process with training and test set
+# linear regression model 2 is equal to a linear regression model
+lr_model_2 = LinearRegression()
+# instead of using the whole wine dataframe we are just going to be using the training set
+# training set with our alcohol variable , trainingset with our quality variable 
+lr_model_2.fit(training_set[["alcohol"]], training_set[["quality"]])
+model_m = lr_model_2.coef_[0][0]
+model_b = lr_model_2.intercept_[0]
+print("Training Model")
+print(f"Regression Equation: y={model_m}x+{model_b}")
+# notice that you will probably have a different set of values than example
+# Why? It splits it randomly, chances of running this and getting same values low
