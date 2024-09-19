@@ -209,3 +209,7 @@ print(f"Coefficient of determination: {score}")
 # Generally makes a slightly better model 
 # In this case have very little data or it was just split badly and in fact we have a worse model than before
 
+# Would it matter: if you rounded your predicted value and then matched that against, does that make a difference? Might , something you can encorporate into your error function or how your evaluating it, because our error function is continuous even though in this case our wine quality scores can only take a discrete value 
+# Would either have to round it if using it in production or adjust your error function 
+
+
