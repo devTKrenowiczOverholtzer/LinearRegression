@@ -116,9 +116,35 @@ total_squares = (wine_df["quality"]- y_mean).pow(2).sum()
 
 #take residual squares as a percentage er as a proportion subtract it from one and thats going to give us r^2 
 r_squared = 1 - (residual_squares/total_squares)
-print(f"Coefficient of Determination: {r_squared}")  
+#print(f"Coefficient of Determination: {r_squared}")  
 # .189 pretty terrible basically 20% of variation in the actual y variables in comparision to our regression line is explained by our model 
 # pretty low percentage so our model isnt that useful, not that good  
 # even though for specific example above it looked alright 
 # important to check r_squared. went really well on one data point of checking but overall this model doesn't predict most ys very well 
+
+# Run model with scikit learn
+# create linear regression model called linearregressionmodel and set that equal to linear regression class
+# creating a sklearn linear regression model by invoking that import sklearn linear model
+linear_regression_model = LinearRegression()
+
+# Expects a list of x variables since it can handle multiple regression 
+# Bracketing , passing in all variables as a list
+# take the liner regression model and call the function fit on it
+# what we are going to fit is the wine dataframe 
+# creating an inner list here for alcohol 
+# and winedataframe creating a list of quality 
+linear_regression_model.fit(wine_df[["alcohol"]], wine_df[["quality"]])
+
+# store the coefficients , in a structure 
+# pull them out 
+# coefficient coef_
+# coefficient index [0][0]
+# can handle multiple regressions so indexing is not straight foward to get this back out
+# documention explain structure it is returning it in 
+model_m = linear_regression_model.coef_[0][0]
+model_b = linear_regression_model.intercept_[0]
+# intercept private property of that and add zero
+
+print ("Scikit Learn Regression Model")
+print(f"Regression Equation: y = {model_m}x + {model_b}")
 
