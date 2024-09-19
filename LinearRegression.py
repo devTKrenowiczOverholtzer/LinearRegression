@@ -13,12 +13,21 @@ wine_df = pd.read_csv('winequality-white.csv', sep =';')
 
 # Make linear regression for Alcohol and WineQuality
 # create scatterplot using our dataframe as x variable , wine quality as our y variable 
-plt.scatter(wine_df['alcohol'], wine_df['quality']) 
+## plt.scatter(wine_df['alcohol'], wine_df['quality']) 
 
 # make pretty with axis labels 
-plt.xlabel('Alcohol')
-plt.ylabel('WineQuality')
-plt.title('Alcohol VS Quality')
+## plt.xlabel('Alcohol')
+## plt.ylabel('WineQuality')
+## plt.title('Alcohol VS Quality')
 
 # show plot 
-plt.show()
+## plt.show()
+
+# Manual Linear Regression between Alcohol and Quality 
+# Get our variables 
+# How many rows we have in our dataframe
+# n variable is how many rows in our dataframe (need to use in a lot of sumations)
+# get length of winedataframe index 
+n =  len(wine_df.index)
+print(n)
+
