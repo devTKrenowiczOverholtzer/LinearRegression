@@ -52,3 +52,10 @@ x_mean = sum_x/n
 y_mean = sum_y/n
 
 #print(f"{x_mean}{y_mean}")
+
+# Summary Statistic Shortcut function 
+# sum of the x's multiplied by the ys 
+# pandas will take care of the dataframe variable multiplication under the hood
+# sum of that 
+# create a new series in pandas so we can take the sum over that series (handy)
+sum_x_times_y = (wine_df['alcohol']*wine_df['quality']).sum() 
