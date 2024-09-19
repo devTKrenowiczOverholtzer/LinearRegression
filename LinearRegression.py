@@ -148,8 +148,15 @@ model_b = linear_regression_model.intercept_[0]
 print ("Scikit Learn Regression Model")
 print(f"Regression Equation: y = {model_m}x + {model_b}")
 
-# Predict same value as before 
-# predict alcohol value 
+# Predict same value as before minus a rounding error at the end 
+# predict alcohol value using scikit learn
 predicted_model_quality = linear_regression_model.predict([[alcohol_val]])
 # have to reindex it 
 print(f'for alcohol value {alcohol_val} the predictive quality was {predicted_model_quality} and the actual value was {quality_val}')
+
+
+# with the scikit model get the coefficieint of determination
+# pass in all alcohol values, inputs to our linear regression model 
+# pass in our quality as our values
+score = linear_regression_model.score(wine_df[["alcohol"]], wine_df[["quality"]])
+print(f"Coefficient of Determination: {score}")
